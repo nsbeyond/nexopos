@@ -488,6 +488,7 @@
           id="cart-bottom-buttons"
         >
           <div
+            v-if="role === 'cashier' || role === 'admin'"
             @click="payOrder()"
             id="pay-button"
             class="flex-shrink-0 w-1/4 flex items-center font-bold cursor-pointer justify-center bg-green-500 text-white hover:bg-green-600 border-r border-green-600 flex-auto"
@@ -498,7 +499,7 @@
             }}</span>
           </div>
           <div
-            v-if="role !== 'captian'"
+            v-if="role === 'captian' || role === 'admin'"
             @click="holdOrder()"
             id="hold-button"
             class="flex-shrink-0 w-1/4 flex items-center font-bold cursor-pointer justify-center bg-blue-500 text-white border-r hover:bg-blue-600 border-blue-600 flex-auto"
@@ -509,6 +510,7 @@
             }}</span>
           </div>
           <div
+            v-if="role === 'cashier' || role === 'admin'"
             @click="openDiscountPopup(order, 'cart')"
             id="discount-button"
             class="flex-shrink-0 w-1/4 flex items-center font-bold cursor-pointer justify-center bg-white border-r border-box-edge hover:bg-indigo-100 flex-auto text-gray-700"
@@ -519,6 +521,7 @@
             }}</span>
           </div>
           <div
+            v-if="role === 'cashier' || role === 'admin'"
             @click="voidOngoingOrder(order)"
             id="void-button"
             class="flex-shrink-0 w-1/4 flex items-center font-bold cursor-pointer justify-center bg-red-500 text-white border-box-edge hover:bg-red-600 flex-auto"
@@ -561,6 +564,9 @@ import nsPosQuickProductPopupVue from "@/popups/ns-pos-quick-product-popup.vue";
 
 export default {
   name: "ns-pos-cart",
+  props: {
+    role: String,
+  },
   data: () => {
     return {
       popup: null,

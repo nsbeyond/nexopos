@@ -14,6 +14,7 @@ return [
         'vi' => 'Vietnamese',
         'sq' => 'Shqiptare',
         'nl' => 'Nederlands',
+        'th' => 'Thai'
     ],
     'rtl-languages' => [ 'ar' ],
     'timezones' => [

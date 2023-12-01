@@ -25,7 +25,9 @@
           class="p-2 flex overflow-hidden"
           v-if="['both', 'grid'].includes(visibleSection)"
         >
-          <ns-pos-grid v-if="role === 'captian'"></ns-pos-grid>
+          <ns-pos-grid
+            v-if="role === 'captian' || role === 'admin'"
+          ></ns-pos-grid>
         </div>
       </div>
     </div>
