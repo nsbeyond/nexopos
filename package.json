@@ -51,7 +51,7 @@
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.7.14",
     "webpack": "^5.81.0",
-    "wildcard": "^2.0.0"
+    "wildcard": "^2.0.1"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^36.0.1",
